@@ -39,7 +39,7 @@ RUN /bin/bash /opt/mysql-init.sh
 
 RUN apt-get clean && apt-get autoclean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-EXPOSE 80 1025 1026 1027 1028
+EXPOSE 80 137 138 139 1082
 
 
 CMD ["/usr/bin/supervisord"] 
