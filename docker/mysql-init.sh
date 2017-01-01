@@ -1,4 +1,10 @@
 #! /bin/bash
+
+echo "add mysqld config"
+sed -i -e '34a table_open_cache=128' /etc/mysql/my.cnf
+sed -i -e '34a table_definition_cache=200' /etc/mysql/my.cnf
+sed -i -e '34a performance_schema_max_table_instances=200' /etc/mysql/my.cnf
+
 sudo service mysql restart
 if [ $? -eq 0 ]; then
 	echo "mysql startup successful!"
