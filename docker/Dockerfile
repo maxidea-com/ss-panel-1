@@ -1,8 +1,8 @@
 # ss-panel
 #
-# VERSION 3.0
+# VERSION 3.1
 
-# auto build from my github project: https://github.com/maxidea-com/ss-panel
+# auto build from my github project: https://github.com/iliul/ss-panel
 
 FROM ubuntu:14.04 
 
@@ -18,7 +18,7 @@ RUN cd /opt; git clone -b manyuser https://github.com/mengskysama/shadowsocks.gi
 RUN rm -f /opt/shadowsocks/shadowsocks/Config.py
 RUN rm -f /opt/shadowsocks/shadowsocks/config.json
 RUN apt-get -y install supervisor
-RUN cd /opt; git clone https://github.com/maxidea-com/ss-panel.git
+RUN cd /opt; git clone https://github.com/iliul/ss-panel.git
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/bin --filename=composer
 RUN cd /opt/ss-panel/; composer install
 RUN chmod -R 777 /opt/ss-panel/storage
@@ -46,4 +46,4 @@ CMD ["/usr/bin/supervisord"]
 
 
 # contact
-MAINTAINER SimonXu, maxidea@gmail.com
+MAINTAINER iliul, liul.stone@gmail.com
